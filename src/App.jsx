@@ -24,7 +24,7 @@ function App() {
         <nav className="py-[3rem] relative">
           <ul className="flex justify-center">{navLinksElements}</ul>
           <img
-            className="absolute top-0 left-0 object-cover"
+            className="absolute top-0 left-0 object-cover -z-[1]"
             src={navBgMobile}
             alt="nav-bg"
           />
