@@ -6,6 +6,7 @@ function App() {
   const navLinksElements = navHeaders.map((stepTitle, index) => {
     return (
       <li className="flex flex-col gap-2">
+        <span className="p-1 border">{index + 1}</span>
         <div>
           <span>STEP {index + 1}</span>
           <span>{stepTitle}</span>
