@@ -20,7 +20,7 @@ function Nav() {
   });
 
   return (
-    <nav className="py-[3rem] pb-[6rem] relative text-White font-medium">
+    <nav className="py-[1.5rem] pb-[6rem] relative text-White font-medium isolate">
       <ul className="flex justify-center">{navLinksElements}</ul>
       <picture>
         <source media="(min-width:900px)" srcSet={navBgDesktop} />
