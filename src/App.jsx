@@ -8,7 +8,7 @@ function App() {
   const [step, setStep] = useState(1);
 
   useEffect(() => {
-    console.log(step);
+    console.log("step : ", step);
   }, [step]);
 
   return (
