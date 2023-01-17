@@ -1,5 +1,5 @@
 import "@/index.css";
-import MainContent from "@/components/MainContent/MainContent";
+import MainContent from "@/Pages/MainContent";
 import Nav from "@/components/Nav/Nav";
 import { useState } from "react";
 import StepContext from "@/utils/contexts/stepContext";

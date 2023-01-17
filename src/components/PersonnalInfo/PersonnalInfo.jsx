@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import FooterNav from "./FooterNav";
+import FooterNav from "@/components/FooterNav/FooterNav.jsx";
 
 function PersonnalInfo(props) {
   const [name, setName] = useState({ value: "", error: "" });
