@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import StepContext from "@/utils/contexts/stepContext";
 
 function App() {
-  const [step, setStep] = useState(0);
+  const [step, setStep] = useState(1);
 
   return (
     <main className="min-h-screen grid font-ubuntu bg-Magnolia">
