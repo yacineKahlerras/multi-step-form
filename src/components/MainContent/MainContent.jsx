@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import PersonnalInfo from "./components/PersonnalInfo";
 
 function MainContent(props) {
-  const step = useContext(StepContext);
+  const { step } = useContext(StepContext);
 
   return (
     <div>

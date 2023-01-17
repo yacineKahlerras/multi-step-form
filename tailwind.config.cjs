@@ -2,9 +2,7 @@
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {
-      fontFamily: { ubuntu: ["ubuntu", "ui-sans-serif"] },
-    },
+    fontFamily: { ubuntu: ["ubuntu", "ui-sans-serif"] },
     colors: {
       MarineBlue: "hsl(213, 96%, 18%)",
       PurplishBlue: "hsl(243, 100%, 62%)",
