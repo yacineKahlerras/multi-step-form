@@ -7,8 +7,8 @@ import FooterNav from "@/components/FooterNav/FooterNav.jsx";
 function Plan(props) {
   const plansInfo = [
     { name: "Arcade", priceMonth: 9, icon: arcadeIcon },
-    { name: "Advanced", priceMonth: 9, icon: advancedIcon },
-    { name: "Pro", priceMonth: 9, icon: proIcon },
+    { name: "Advanced", priceMonth: 12, icon: advancedIcon },
+    { name: "Pro", priceMonth: 15, icon: proIcon },
   ];
 
   const plansElements = plansInfo.map((plan, index) => {
