@@ -2,7 +2,7 @@ import StepContext from "@/utils/contexts/stepContext";
 import React, { useContext } from "react";
 
 function FooterNav(props) {
-  const { step, setStep } = useContext(StepContext);
+  const { step } = useContext(StepContext);
   const { checkInfo } = props;
 
   const BackBtn =

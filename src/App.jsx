@@ -1,11 +1,15 @@
 import "@/index.css";
 import MainContent from "@/Pages/MainContent";
 import Nav from "@/components/Nav/Nav";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import StepContext from "@/utils/contexts/stepContext";
 
 function App() {
   const [step, setStep] = useState(1);
+
+  useEffect(() => {
+    console.log(step);
+  }, [step]);
 
   return (
     <main className="min-h-screen grid font-ubuntu bg-Magnolia">

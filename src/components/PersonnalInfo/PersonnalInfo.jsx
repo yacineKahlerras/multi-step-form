@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import FooterNav from "@/components/FooterNav/FooterNav.jsx";
 import validateForm from "./validateForm";
 import FormInputs from "./FormInputs";
+import StepContext from "@/utils/contexts/stepContext";
 
 function PersonnalInfo() {
   const [name, setName] = useState({ value: "", error: "" });
   const [email, setEmail] = useState({ value: "", error: "" });
   const [phone, setPhone] = useState({ value: "", error: "" });
+
+  const { setStep } = useContext(StepContext);
 
   const fieldsInfo = [
     {
@@ -33,7 +36,17 @@ function PersonnalInfo() {
   ];
 
   function checkInfo() {
-    validateForm(name, setName, email, setEmail, phone, setPhone);
+    const formValid = validateForm(
+      name,
+      setName,
+      email,
+      setEmail,
+      phone,
+      setPhone
+    );
+    if (formValid) {
+      setStep((oldStep) => oldStep + 1);
+    }
   }
 
   return (

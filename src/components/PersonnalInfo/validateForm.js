@@ -2,9 +2,12 @@ const fieldEmptyErrorMsg = "This Field is Required";
 const wrongFormatErrorMsg = "Wrong Format";
 
 function validateForm(name, setName, email, setEmail, phone, setPhone) {
+  let formValid = true;
+
   //name
   if (!name.value) {
     setName((oldName) => ({ ...oldName, error: fieldEmptyErrorMsg }));
+    formValid = false;
   } else {
     setName((oldName) => ({ ...oldName, error: "" }));
   }
@@ -12,8 +15,10 @@ function validateForm(name, setName, email, setEmail, phone, setPhone) {
   // email
   if (!email.value) {
     setEmail((oldName) => ({ ...oldName, error: fieldEmptyErrorMsg }));
+    formValid = false;
   } else if (!validateEmail(email.value)) {
     setEmail((oldValue) => ({ ...oldValue, error: wrongFormatErrorMsg }));
+    formValid = false;
   } else {
     setEmail((oldName) => ({ ...oldName, error: "" }));
   }
@@ -21,11 +26,15 @@ function validateForm(name, setName, email, setEmail, phone, setPhone) {
   //phone
   if (!phone.value) {
     setPhone((oldValue) => ({ ...oldValue, error: fieldEmptyErrorMsg }));
+    formValid = false;
   } else if (!validatePhone(phone.value)) {
     setPhone((oldValue) => ({ ...oldValue, error: wrongFormatErrorMsg }));
+    formValid = false;
   } else {
     setPhone((oldName) => ({ ...oldName, error: "" }));
   }
+
+  return formValid;
 }
 
 const validateEmail = (email) => {
