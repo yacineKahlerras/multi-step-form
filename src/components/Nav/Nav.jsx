@@ -14,7 +14,7 @@ function Nav() {
         <span
           className={`w-10 h-10 m-2 border-2 grid content-center text-center rounded-full 
           ${
-            step != index + 1
+            step != index
               ? ""
               : "text-MarineBlue font-bold bg-PastelBlue border-PastelBlue"
           }`}

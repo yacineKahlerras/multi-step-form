@@ -5,9 +5,12 @@ import FormInputs from "./FormInputs";
 import StepContext from "@/utils/contexts/stepContext";
 
 function PersonnalInfo() {
-  const [name, setName] = useState({ value: "", error: "" });
-  const [email, setEmail] = useState({ value: "", error: "" });
-  const [phone, setPhone] = useState({ value: "", error: "" });
+  const [name, setName] = useState({ value: "Stephen King", error: "" });
+  const [email, setEmail] = useState({
+    value: "stephenking@lorem.com",
+    error: "",
+  });
+  const [phone, setPhone] = useState({ value: "+1234567890", error: "" });
 
   const { setStep } = useContext(StepContext);
 
@@ -18,6 +21,7 @@ function PersonnalInfo() {
         setName((oldValue) => ({ ...oldValue, value: e.target.value })),
       error: name.error,
       placeholder: "e.g. Stephen King",
+      value: name.value,
     },
     {
       label: "Email Address",
@@ -25,6 +29,7 @@ function PersonnalInfo() {
         setEmail((oldValue) => ({ ...oldValue, value: e.target.value })),
       error: email.error,
       placeholder: "e.g. stephenking@lorem.com",
+      value: email.value,
     },
     {
       label: "Phone Number",
@@ -32,6 +37,7 @@ function PersonnalInfo() {
         setPhone((oldValue) => ({ ...oldValue, value: e.target.value })),
       error: phone.error,
       placeholder: "e.g. +1 234 567 890",
+      value: phone.value,
     },
   ];
 

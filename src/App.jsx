@@ -7,10 +7,6 @@ import StepContext from "@/utils/contexts/stepContext";
 function App() {
   const [step, setStep] = useState(1);
 
-  useEffect(() => {
-    console.log("step : ", step);
-  }, [step]);
-
   return (
     <main className="min-h-screen grid font-ubuntu bg-Magnolia">
       <div className=" flex flex-col">
