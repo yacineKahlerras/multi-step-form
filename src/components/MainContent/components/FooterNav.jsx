@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 
 function FooterNav(props) {
   const { step, setStep } = useContext(StepContext);
-  const { nextActive } = props;
+  const { checkInfo } = props;
 
   const BackBtn =
     step < 2 ? (
@@ -17,6 +17,7 @@ function FooterNav(props) {
   const NextBtn = (
     <button
       type="button"
+      onClick={checkInfo}
       className={`text-White text-sm bg-MarineBlue hover:bg-PurplishBlue rounded-md py-[.5em] px-[1.5em] max-w-[10rem] ml-auto`}
     >
       Next Step
@@ -25,7 +26,7 @@ function FooterNav(props) {
 
   return (
     <div className="w-full py-3 px-6 absolute bottom-0 left-0 bg-White drop-shadow-2xl">
-      <div className="mx-auto flex justify-between">
+      <div className="mx-auto flex">
         {BackBtn}
         {NextBtn}
       </div>
