@@ -8,7 +8,7 @@ function App() {
   const [step, setStep] = useState(1);
 
   return (
-    <main className="min-h-screen grid font-ubuntu bg-Magnolia">
+    <main className="min-h-screen grid font-ubuntu bg-Magnolia text-sm">
       <div className=" flex flex-col">
         <StepContext.Provider value={{ step: step, setStep: setStep }}>
           <Nav />

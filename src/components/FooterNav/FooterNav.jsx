@@ -18,7 +18,7 @@ function FooterNav(props) {
     <button
       type="button"
       onClick={checkInfo}
-      className={`text-White text-sm bg-MarineBlue hover:bg-PurplishBlue rounded-md py-[.5em] px-[1.5em] max-w-[10rem] ml-auto`}
+      className={`text-White bg-MarineBlue hover:bg-PurplishBlue rounded-md py-[.5em] px-[1.5em] max-w-[10rem] ml-auto`}
     >
       Next Step
     </button>

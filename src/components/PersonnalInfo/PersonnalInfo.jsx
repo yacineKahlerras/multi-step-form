@@ -59,7 +59,7 @@ function PersonnalInfo() {
     <div>
       <div className="card-component">
         <h1 className="card-header">Personnal Info</h1>
-        <p className="text-CoolGray text-sm mb-3">
+        <p className="text-CoolGray mb-3">
           Please provide your name, email address, and phone number.
         </p>
         <form className="flex flex-col gap-3">
