@@ -1,0 +1,7 @@
+@tailwind components;
+
+@layer components {
+  .card-component {
+    @apply bg-White drop-shadow-lg rounded-lg p-5 pt-7 w-[90%] m-auto text-MarineBlue relative top-[-5rem];
+  }
+}

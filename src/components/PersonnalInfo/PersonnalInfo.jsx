@@ -57,7 +57,7 @@ function PersonnalInfo() {
 
   return (
     <div>
-      <div className="bg-White drop-shadow-lg rounded-lg p-5 pt-7 w-[90%] m-auto text-MarineBlue relative top-[-5rem]">
+      <div className="card-component">
         <h1 className="text-xl font-bold mb-2">Personnal Info</h1>
         <p className="text-CoolGray text-sm mb-3">
           Please provide your name, email address, and phone number.
