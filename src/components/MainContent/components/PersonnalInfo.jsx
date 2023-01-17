@@ -12,19 +12,22 @@ function PersonnalInfo(props) {
   const fieldsInfo = [
     {
       label: "Name",
-      onChange: setName,
+      onChange: (e) =>
+        setName((oldValue) => ({ ...oldValue, value: e.target.value })),
       error: name.error,
       placeholder: "e.g. Stephen King",
     },
     {
       label: "Email Address",
-      onChange: setEmail,
+      onChange: (e) =>
+        setEmail((oldValue) => ({ ...oldValue, value: e.target.value })),
       error: email.error,
       placeholder: "e.g. stephenking@lorem.com",
     },
     {
       label: "Phone Number",
-      onChange: setPhone,
+      onChange: (e) =>
+        setPhone((oldValue) => ({ ...oldValue, value: e.target.value })),
       error: phone.error,
       placeholder: "e.g. +1 234 567 890",
     },
@@ -57,17 +60,36 @@ function PersonnalInfo(props) {
       );
   };
 
+  const validatePhone = (phone) => {
+    return String(phone)
+      .toLowerCase()
+      .match(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im);
+  };
+
   function checkInfo() {
     //name
     if (!name.value) {
       setName((oldName) => ({ ...oldName, error: fieldEmptyErrorMsg }));
+    } else {
+      setName((oldName) => ({ ...oldName, error: "" }));
     }
 
     // email
     if (!email.value) {
       setEmail((oldName) => ({ ...oldName, error: fieldEmptyErrorMsg }));
     } else if (!validateEmail(email.value)) {
-      setEmail((oldName) => ({ ...oldName, error: wrongFormatErrorMsg }));
+      setEmail((oldValue) => ({ ...oldValue, error: wrongFormatErrorMsg }));
+    } else {
+      setEmail((oldName) => ({ ...oldName, error: "" }));
+    }
+
+    //phone
+    if (!phone.value) {
+      setPhone((oldValue) => ({ ...oldValue, error: fieldEmptyErrorMsg }));
+    } else if (!validatePhone(phone.value)) {
+      setPhone((oldValue) => ({ ...oldValue, error: wrongFormatErrorMsg }));
+    } else {
+      setPhone((oldName) => ({ ...oldName, error: "" }));
     }
   }
 
