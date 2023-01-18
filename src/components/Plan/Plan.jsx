@@ -60,12 +60,12 @@ function Plan(props) {
         </span>
         <label className="relative inline-flex items-center cursor-pointer">
           <input
-            onChange={toggleChange}
-            checked={billingPlan.billingPer !== "month"}
+            // onChange={toggleChange}
+            // checked={billingPlan.billingPer !== "month"}
             type="checkbox"
             className="sr-only peer"
           />
-          <div className="billing-toggle-switch peer"></div>
+          <div className="billing-toggle-switch"></div>
         </label>
         <span
           className={`capitalize font-bold ${activeYearStyle} transition-all duration-700`}
