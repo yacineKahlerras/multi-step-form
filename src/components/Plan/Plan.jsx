@@ -53,7 +53,9 @@ function Plan(props) {
 
     return (
       <div className="bg-Magnolia flex justify-center items-center gap-3 py-4 rounded-lg">
-        <span className={`capitalize font-bold ${activeMonthStyle}`}>
+        <span
+          className={`capitalize font-bold ${activeMonthStyle} duration-700`}
+        >
           monthly
         </span>
         <label className="relative inline-flex items-center cursor-pointer">
@@ -65,7 +67,9 @@ function Plan(props) {
           />
           <div className="billing-toggle-switch peer"></div>
         </label>
-        <span className={`capitalize font-bold ${activeYearStyle}`}>
+        <span
+          className={`capitalize font-bold ${activeYearStyle} transition-all duration-700`}
+        >
           yearly
         </span>
       </div>
