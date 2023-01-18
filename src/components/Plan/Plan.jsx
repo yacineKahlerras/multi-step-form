@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import arcadeIcon from "@/assets/images/icon-arcade.svg";
 import advancedIcon from "@/assets/images/icon-advanced.svg";
 import proIcon from "@/assets/images/icon-pro.svg";
@@ -38,14 +38,36 @@ function Plan(props) {
   });
 
   function BillingPeriod() {
+    const toggleSwitch = useRef();
+    const activeMonthStyle =
+      billingPlan.billingPer == "month" ? "" : "text-CoolGray";
+    const activeYearStyle =
+      billingPlan.billingPer == "year" ? "" : "text-CoolGray";
+
+    function toggleChange(e) {
+      setBillingPlan((oldValue) => ({
+        ...oldValue,
+        billingPer: oldValue.billingPer === "month" ? "year" : "month",
+      }));
+    }
+
     return (
-      <div>
-        <span>monthly</span>
+      <div className="bg-Magnolia flex justify-center items-center gap-3 py-4 rounded-lg">
+        <span className={`capitalize font-bold ${activeMonthStyle}`}>
+          monthly
+        </span>
         <label className="relative inline-flex items-center cursor-pointer">
-          <input type="checkbox" value="" className="sr-only peer" />
+          <input
+            onChange={toggleChange}
+            checked={billingPlan.billingPer !== "month"}
+            type="checkbox"
+            className="sr-only peer"
+          />
           <div className="billing-toggle-switch peer"></div>
         </label>
-        <span>yearly</span>
+        <span className={`capitalize font-bold ${activeYearStyle}`}>
+          yearly
+        </span>
       </div>
     );
   }
@@ -66,7 +88,7 @@ function Plan(props) {
         <p className="text-CoolGray mb-3">
           You have the option of monthly or yearly billing.
         </p>
-        <div className="flex flex-col gap-4">{plansElements}</div>
+        <div className="flex flex-col gap-4 mb-5">{plansElements}</div>
 
         <BillingPeriod />
       </div>
