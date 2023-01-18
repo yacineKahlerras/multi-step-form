@@ -37,7 +37,18 @@ function Plan(props) {
     );
   });
 
-  function BillingPeriod() {}
+  function BillingPeriod() {
+    return (
+      <div>
+        <span>monthly</span>
+        <label className="relative inline-flex items-center cursor-pointer">
+          <input type="checkbox" value="" className="sr-only peer" />
+          <div className="billing-toggle-switch peer"></div>
+        </label>
+        <span>yearly</span>
+      </div>
+    );
+  }
 
   function selectPlan(planIndex) {
     setBillingPlan((oldValue) => ({
