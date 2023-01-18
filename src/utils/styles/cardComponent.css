@@ -8,4 +8,8 @@
   .card-header {
     @apply text-xl font-bold mb-2;
   }
+
+  .billing-plan {
+    @apply flex gap-3 items-center border border-spacing-1 border-LightGray rounded-lg px-2 py-2 cursor-pointer duration-700;
+  }
 }
