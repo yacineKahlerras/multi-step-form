@@ -3,6 +3,7 @@ import React, { useContext, useState } from "react";
 import PersonnalInfo from "@/components/PersonnalInfo/PersonnalInfo.jsx";
 import Plan from "@/components/Plan/Plan";
 import UserData from "@/utils/contexts/UserData";
+import AddOns from "@/components/AddOns/AddOns";
 
 function MainContent(props) {
   const { step } = useContext(StepContext);
@@ -23,7 +24,7 @@ function MainContent(props) {
     setBillingPlan: setBillingPlan,
   };
 
-  const stepPages = [<PersonnalInfo />, <Plan />];
+  const stepPages = [<PersonnalInfo />, <Plan />, <AddOns />];
 
   return (
     <div>
