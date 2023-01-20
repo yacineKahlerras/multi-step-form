@@ -1,10 +1,6 @@
 import React, { useContext, useState } from "react";
-import arcadeIcon from "@/assets/images/icon-arcade.svg";
-import advancedIcon from "@/assets/images/icon-advanced.svg";
-import proIcon from "@/assets/images/icon-pro.svg";
 import FooterNav from "@/components/FooterNav/FooterNav.jsx";
 import AddOnElements from "./components/AddOnElements";
-import UserData from "@/utils/contexts/UserData";
 import StepContext from "@/utils/contexts/stepContext";
 
 function AddOns() {
