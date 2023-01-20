@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import FooterNav from "@/components/FooterNav/FooterNav.jsx";
-import validateForm from "./validateForm";
-import FormInputs from "./FormInputs";
+import validateForm from "./components/validateForm";
+import FormInputs from "./components/FormInputs";
 import StepContext from "@/utils/contexts/stepContext";
 
 function PersonnalInfo() {

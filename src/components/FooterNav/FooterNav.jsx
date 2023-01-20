@@ -6,7 +6,7 @@ function FooterNav(props) {
   const { checkInfo } = props;
 
   const BackBtn =
-    step < 2 ? (
+    step < 1 ? (
       ""
     ) : (
       <button type="button" className={`text-CoolGray font-medium text-sm`}>
