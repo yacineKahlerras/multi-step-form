@@ -23,7 +23,7 @@ function BillingPeriod(props) {
       <label className="relative inline-flex items-center cursor-pointer">
         <input
           onChange={() => toggleChange()}
-          value=""
+          defaultValue={false}
           type="checkbox"
           className="sr-only peer"
         />
