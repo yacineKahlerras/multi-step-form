@@ -5,9 +5,24 @@ import checkedIcon from "@/assets/images/icon-checkmark.svg";
 
 function AddOnElements(props) {
   const { billingPlan, addOnIndexes, setAddOnIndexes } = useContext(UserData);
-  const { addOnInfo, selectAddOn } = props;
+  const { addOnInfo } = props;
   const isYearly = billingPlan.billingPer === "year";
   const priceCoefficent = isYearly ? 10 : 1;
+
+  function selectAddOn(index) {
+    const isChecked = addOnIndexes.has(Number(index));
+    if (isChecked) {
+      setAddOnIndexes((oldValue) => {
+        oldValue.delete(index);
+        return new Set([...oldValue]);
+      });
+    } else {
+      setAddOnIndexes((oldValue) => {
+        oldValue.add(index);
+        return new Set([...oldValue]);
+      });
+    }
+  }
 
   return addOnInfo.map((addon, index) => {
     const isChecked = addOnIndexes.has(index);

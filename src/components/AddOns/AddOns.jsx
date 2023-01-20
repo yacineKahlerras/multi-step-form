@@ -9,8 +9,6 @@ function AddOns() {
   const { setStep } = useContext(StepContext);
   const { addOnIndexes, setAddOnIndexes } = useContext(UserData);
 
-  function selectAddOn() {}
-
   function nextStep() {
     setStep((oldStep) => oldStep + 1);
   }
@@ -23,7 +21,7 @@ function AddOns() {
           Add-ons help enhance your gaming experience.
         </p>
         <div className="flex flex-col gap-4 mb-5">
-          <AddOnElements addOnInfo={addOnInfo} selectAddOn={selectAddOn} />
+          <AddOnElements addOnInfo={addOnInfo} />
         </div>
       </div>
 
