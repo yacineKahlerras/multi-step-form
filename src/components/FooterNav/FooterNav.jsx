@@ -2,14 +2,22 @@ import StepContext from "@/utils/contexts/stepContext";
 import React, { useContext } from "react";
 
 function FooterNav(props) {
-  const { step } = useContext(StepContext);
+  const { step, setStep } = useContext(StepContext);
   const { checkInfo } = props;
+
+  function BackStep() {
+    setStep((oldValue) => oldValue - 1);
+  }
 
   const BackBtn =
     step < 1 ? (
       ""
     ) : (
-      <button type="button" className={`text-CoolGray font-medium text-sm`}>
+      <button
+        onClick={BackStep}
+        type="button"
+        className={`text-CoolGray font-medium text-sm`}
+      >
         Go Back
       </button>
     );

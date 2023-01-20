@@ -6,9 +6,11 @@ import FooterNav from "@/components/FooterNav/FooterNav.jsx";
 import BillingPeriod from "./components/BillingPeriod";
 import PlanElements from "./components/PlanElements";
 import UserData from "@/utils/contexts/UserData";
+import StepContext from "@/utils/contexts/stepContext";
 
 function Plan() {
   const { billingPlan, setBillingPlan } = useContext(UserData);
+  const { setStep } = useContext(StepContext);
 
   const plansInfo = [
     { name: "arcade", priceMonth: 9, icon: arcadeIcon },
@@ -23,7 +25,9 @@ function Plan() {
     }));
   }
 
-  function checkInfo() {}
+  function nextStep() {
+    setStep((oldStep) => oldStep + 1);
+  }
 
   return (
     <div>
@@ -46,7 +50,7 @@ function Plan() {
         />
       </div>
 
-      <FooterNav checkInfo={checkInfo} />
+      <FooterNav checkInfo={nextStep} />
     </div>
   );
 }
