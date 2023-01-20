@@ -3,16 +3,18 @@ import FooterNav from "@/components/FooterNav/FooterNav.jsx";
 import validateForm from "./components/validateForm";
 import FormInputs from "./components/FormInputs";
 import StepContext from "@/utils/contexts/stepContext";
+import UserData from "@/utils/contexts/UserData";
 
 function PersonnalInfo() {
-  const [name, setName] = useState({ value: "Stephen King", error: "" });
+  const { setStep } = useContext(StepContext);
+  const { userInfo, setUserInfo } = useContext(UserData);
+
+  const [name, setName] = useState({ value: userInfo.name, error: "" });
   const [email, setEmail] = useState({
-    value: "stephenking@lorem.com",
+    value: userInfo.email,
     error: "",
   });
-  const [phone, setPhone] = useState({ value: "+1234567890", error: "" });
-
-  const { setStep } = useContext(StepContext);
+  const [phone, setPhone] = useState({ value: userInfo.phone, error: "" });
 
   const fieldsInfo = [
     {
@@ -52,6 +54,7 @@ function PersonnalInfo() {
     );
     if (formValid) {
       setStep((oldStep) => oldStep + 1);
+      setUserInfo({ name: name.value, email: email.value, phone: phone.value });
     }
   }
 

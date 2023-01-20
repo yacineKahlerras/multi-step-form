@@ -1,7 +1,7 @@
 import "@/index.css";
 import MainContent from "@/Pages/MainContent";
 import Nav from "@/components/Nav/Nav";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import StepContext from "@/utils/contexts/stepContext";
 
 function App() {
