@@ -4,24 +4,24 @@ import PersonnalInfo from "@/components/PersonnalInfo/PersonnalInfo.jsx";
 import Plan from "@/components/Plan/Plan";
 import UserData from "@/utils/contexts/UserData";
 import AddOns from "@/components/AddOns/AddOns";
+import { defaultPersonnalInfo, plansInfo, addOnInfo } from "@/utils/data/data";
 
-function MainContent(props) {
+function MainContent() {
   const { step } = useContext(StepContext);
-  const [userInfo, setUserInfo] = useState({
-    name: "Stephen King",
-    email: "stephenking@lorem.com",
-    phone: "+1234567890",
-  });
+  const [userInfo, setUserInfo] = useState(defaultPersonnalInfo);
   const [billingPlan, setBillingPlan] = useState({
     name: "arcade",
     billingPer: "month",
   });
+  const [addOnIndexes, setAddOnIndexes] = useState(new Set([0, 1]));
 
   const data = {
     userInfo: userInfo,
     setUserInfo: setUserInfo,
     billingPlan: billingPlan,
     setBillingPlan: setBillingPlan,
+    addOnIndexes: addOnIndexes,
+    setAddOnIndexes: setAddOnIndexes,
   };
 
   const stepPages = [<PersonnalInfo />, <Plan />, <AddOns />];

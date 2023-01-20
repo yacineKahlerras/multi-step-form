@@ -2,29 +2,14 @@ import React, { useContext, useState } from "react";
 import FooterNav from "@/components/FooterNav/FooterNav.jsx";
 import AddOnElements from "./components/AddOnElements";
 import StepContext from "@/utils/contexts/stepContext";
+import { addOnInfo } from "@/utils/data/data";
+import UserData from "@/utils/contexts/UserData";
 
 function AddOns() {
   const { setStep } = useContext(StepContext);
+  const { addOnIndexes, setAddOnIndexes } = useContext(UserData);
 
-  const addOnInfo = [
-    {
-      title: "Online service",
-      subtitle: "Access to multiplayer games",
-      monthlyPrice: 1,
-    },
-    {
-      title: "Larger storage",
-      subtitle: "Extra 1TB of cloud save",
-      monthlyPrice: 2,
-    },
-    {
-      title: "Customizable Profile",
-      subtitle: "Custom theme on your profile",
-      monthlyPrice: 2,
-    },
-  ];
-
-  function selectAddOn(params) {}
+  function selectAddOn() {}
 
   function nextStep() {
     setStep((oldStep) => oldStep + 1);
