@@ -1,9 +1,19 @@
 import React from "react";
+import { useContext } from "react";
+import { plansInfo } from "@/utils/data/data";
+import UserData from "@/utils/contexts/UserData";
 
-function PlanElements(props) {
-  const { plansInfo, billingPlan, selectPlan } = props;
+function PlanElements() {
+  const { billingPlan, setBillingPlan } = useContext(UserData);
   const isYearly = billingPlan.billingPer === "year";
   const priceCoefficent = isYearly ? 10 : 1;
+
+  function selectPlan(planIndex) {
+    setBillingPlan((oldValue) => ({
+      ...oldValue,
+      index: planIndex,
+    }));
+  }
 
   const freeMonthsElement = isYearly ? (
     <span className=" font-medium text-MarineBlue text-xs">2 months free</span>
@@ -13,7 +23,7 @@ function PlanElements(props) {
 
   return plansInfo.map((plan, index) => {
     const activePlanStyle =
-      billingPlan.name !== plan.name ? "" : "border-PurplishBlue bg-Magnolia";
+      billingPlan.index !== index ? "" : "border-PurplishBlue bg-Magnolia";
 
     return (
       <div

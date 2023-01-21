@@ -4,18 +4,9 @@ import BillingPeriod from "./components/BillingPeriod";
 import PlanElements from "./components/PlanElements";
 import UserData from "@/utils/contexts/UserData";
 import StepContext from "@/utils/contexts/stepContext";
-import { plansInfo } from "@/utils/data/data";
 
 function Plan() {
-  const { billingPlan, setBillingPlan } = useContext(UserData);
   const { setStep } = useContext(StepContext);
-
-  function selectPlan(planIndex) {
-    setBillingPlan((oldValue) => ({
-      ...oldValue,
-      name: plansInfo[planIndex].name,
-    }));
-  }
 
   function nextStep() {
     setStep((oldStep) => oldStep + 1);
@@ -29,17 +20,10 @@ function Plan() {
           You have the option of monthly or yearly billing.
         </p>
         <div className="flex flex-col gap-4 mb-5">
-          <PlanElements
-            plansInfo={plansInfo}
-            billingPlan={billingPlan}
-            selectPlan={selectPlan}
-          />
+          <PlanElements />
         </div>
 
-        <BillingPeriod
-          billingPlan={billingPlan}
-          setBillingPlan={setBillingPlan}
-        />
+        <BillingPeriod />
       </div>
 
       <FooterNav checkInfo={nextStep} />

@@ -1,7 +1,9 @@
 import React from "react";
+import { useContext } from "react";
+import UserData from "@/utils/contexts/UserData";
 
 function BillingPeriod(props) {
-  const { billingPlan, setBillingPlan } = props;
+  const { billingPlan, setBillingPlan } = useContext(UserData);
 
   const activeMonthStyle =
     billingPlan.billingPer == "month" ? "" : "text-CoolGray";
