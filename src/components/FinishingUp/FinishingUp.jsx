@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import FooterNav from "@/components/FooterNav/FooterNav.jsx";
 import StepContext from "@/utils/contexts/stepContext";
-import { addOnInfo } from "@/utils/data/data";
+import { addOnInfo, plansInfo } from "@/utils/data/data";
 import UserData from "@/utils/contexts/UserData";
 
 function FinishingUp() {
@@ -9,7 +9,16 @@ function FinishingUp() {
   const { addOnIndexes, billingPlan } = useContext(UserData);
   const isYearly = billingPlan.billingPer === "year";
 
-  const billInfo = [{ title: billingPlan.name }];
+  const billInfo = [
+    {
+      title: plansInfo[billingPlan.index].name,
+      price: plansInfo[billingPlan.index].priceMonth,
+    },
+  ];
+
+  for (const addOnIdx of addOnIndexes) {
+    billInfo.push();
+  }
 
   function nextStep() {
     setStep((oldStep) => oldStep + 1);
