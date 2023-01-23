@@ -34,7 +34,7 @@ function FooterNav(props) {
 
   return (
     <div className="w-full py-3 px-6 absolute bottom-0 left-0 bg-White drop-shadow-2xl">
-      <div className="mx-auto flex">
+      <div className="max-w-xs mx-auto flex">
         {BackBtn}
         {NextBtn}
       </div>
