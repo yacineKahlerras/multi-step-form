@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import FooterNav from "@/components/FooterNav/FooterNav.jsx";
-import StepContext from "@/utils/contexts/stepContext";
 import { addOnInfo, plansInfo } from "@/utils/data/data";
 import UserData from "@/utils/contexts/UserData";
 import FinishingUpElements from "./components/FinishingUpElements";
@@ -8,6 +7,8 @@ import FinishingUpElements from "./components/FinishingUpElements";
 function FinishingUp() {
   const { addOnIndexes, billingPlan } = useContext(UserData);
   const isYearly = billingPlan.billingPer === "year";
+  const yearlyCoefficent = isYearly ? 10 : 1;
+  let fullPrice = plansInfo[billingPlan.index].priceMonth;
 
   const billInfo = [
     {
@@ -22,6 +23,7 @@ function FinishingUp() {
       title: addOnInfo[addOnIdx].title,
       price: addOnInfo[addOnIdx].monthlyPrice,
     });
+    fullPrice += addOnInfo[addOnIdx].monthlyPrice;
   }
 
   function nextStep() {}
@@ -43,7 +45,7 @@ function FinishingUp() {
         <div className="flex justify-between px-4 text-CoolGray">
           <span>Total (per {isYearly ? "year" : "month"})</span>
           <span className="text-PurplishBlue font-bold">
-            $120/{isYearly ? "yr" : "mo"}
+            ${fullPrice * yearlyCoefficent}/{isYearly ? "yr" : "mo"}
           </span>
         </div>
       </div>

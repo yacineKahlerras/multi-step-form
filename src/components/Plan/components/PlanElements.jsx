@@ -7,6 +7,7 @@ function PlanElements() {
   const { billingPlan, setBillingPlan } = useContext(UserData);
   const isYearly = billingPlan.billingPer === "year";
   const priceCoefficent = isYearly ? 10 : 1;
+  const timeUnit = isYearly ? "yr" : "mo";
 
   function selectPlan(planIndex) {
     setBillingPlan((oldValue) => ({
@@ -35,7 +36,7 @@ function PlanElements() {
         <div className="flex flex-col">
           <h2 className="font-bold leading-none capitalize">{plan.name}</h2>
           <span className="text-CoolGray font-medium">
-            ${plan.priceMonth * priceCoefficent}/mo
+            ${plan.priceMonth * priceCoefficent}/{timeUnit}
           </span>
           {freeMonthsElement}
         </div>

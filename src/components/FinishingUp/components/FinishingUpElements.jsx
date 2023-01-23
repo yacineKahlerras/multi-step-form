@@ -1,7 +1,4 @@
 import React from "react";
-import { useContext } from "react";
-import UserData from "@/utils/contexts/UserData";
-import checkedIcon from "@/assets/images/icon-checkmark.svg";
 
 function FinishingUpElements(props) {
   const { billInfo, isYearly } = props;
