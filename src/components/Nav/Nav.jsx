@@ -35,7 +35,7 @@ function Nav() {
   return (
     <nav
       className="py-[1.5rem] pb-[6rem] relative text-White font-medium isolate 
-    capitalize md:px-4 md:w-full md:max-w-[10rem]"
+    capitalize md:px-4 md:min-w-[200px]"
     >
       <ul className="flex justify-center md:flex-col md:gap-1">
         {navLinksElements}
