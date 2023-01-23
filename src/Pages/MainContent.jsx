@@ -35,7 +35,7 @@ function MainContent() {
   ];
 
   return (
-    <div>
+    <div className="md:grid md:justify-center">
       <UserData.Provider value={data}>{stepPages[step]}</UserData.Provider>
     </div>
   );
