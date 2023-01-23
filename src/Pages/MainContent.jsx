@@ -6,6 +6,7 @@ import UserData from "@/utils/contexts/UserData";
 import AddOns from "@/components/AddOns/AddOns";
 import { defaultPersonnalInfo, plansInfo, addOnInfo } from "@/utils/data/data";
 import FinishingUp from "@/components/FinishingUp/FinishingUp";
+import ThankYou from "@/components/ThankYou/ThankYou";
 
 function MainContent() {
   const { step } = useContext(StepContext);
@@ -25,7 +26,13 @@ function MainContent() {
     setAddOnIndexes: setAddOnIndexes,
   };
 
-  const stepPages = [<PersonnalInfo />, <Plan />, <AddOns />, <FinishingUp />];
+  const stepPages = [
+    <PersonnalInfo />,
+    <Plan />,
+    <AddOns />,
+    <FinishingUp />,
+    <ThankYou />,
+  ];
 
   return (
     <div>

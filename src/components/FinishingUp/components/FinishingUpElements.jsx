@@ -1,8 +1,15 @@
+import StepContext from "@/utils/contexts/stepContext";
 import React from "react";
+import { useContext } from "react";
 
 function FinishingUpElements(props) {
+  const { setStep } = useContext(StepContext);
   const { billInfo, isYearly } = props;
   const yearlyCoefficent = isYearly ? 10 : 1;
+
+  function changePlan() {
+    setStep(1);
+  }
 
   return billInfo.map((bill, index) => {
     return (
@@ -22,6 +29,7 @@ function FinishingUpElements(props) {
 
           {/* change plan */}
           <button
+            onClick={changePlan}
             className={`capitalize underline ${index == 0 ? "" : "hidden"}`}
           >
             change
