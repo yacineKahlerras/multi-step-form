@@ -3,8 +3,10 @@ import FooterNav from "@/components/FooterNav/FooterNav.jsx";
 import { addOnInfo, plansInfo } from "@/utils/data/data";
 import UserData from "@/utils/contexts/UserData";
 import FinishingUpElements from "./components/FinishingUpElements";
+import StepContext from "@/utils/contexts/stepContext";
 
 function FinishingUp() {
+  const { setStep } = useContext(StepContext);
   const { addOnIndexes, billingPlan } = useContext(UserData);
   const isYearly = billingPlan.billingPer === "year";
   const yearlyCoefficent = isYearly ? 10 : 1;
@@ -26,7 +28,9 @@ function FinishingUp() {
     fullPrice += addOnInfo[addOnIdx].monthlyPrice;
   }
 
-  function nextStep() {}
+  function nextStep() {
+    setStep((oldStep) => oldStep + 1);
+  }
 
   return (
     <div>

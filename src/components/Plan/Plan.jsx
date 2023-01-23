@@ -1,8 +1,7 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import FooterNav from "@/components/FooterNav/FooterNav.jsx";
 import BillingPeriod from "./components/BillingPeriod";
 import PlanElements from "./components/PlanElements";
-import UserData from "@/utils/contexts/UserData";
 import StepContext from "@/utils/contexts/stepContext";
 
 function Plan() {

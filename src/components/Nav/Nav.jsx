@@ -9,15 +9,15 @@ function Nav() {
   const { step } = useContext(StepContext);
 
   const navLinksElements = navHeaders.map((stepTitle, index) => {
+    const activeHeaderStyle =
+      step == index || (step > 3 && index == navHeaders.length - 1)
+        ? "text-MarineBlue font-bold bg-PastelBlue border-PastelBlue"
+        : "";
+
     return (
       <li key={index} className="flex gap-2">
         <span
-          className={`w-10 h-10 m-2 border-2 grid content-center text-center rounded-full 
-          ${
-            step != index
-              ? ""
-              : "text-MarineBlue font-bold bg-PastelBlue border-PastelBlue"
-          }`}
+          className={`w-10 h-10 m-2 border-2 grid content-center text-center rounded-full ${activeHeaderStyle}`}
         >
           {index + 1}
         </span>

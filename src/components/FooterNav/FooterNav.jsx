@@ -28,7 +28,7 @@ function FooterNav(props) {
       onClick={checkInfo}
       className={`text-White bg-MarineBlue hover:bg-PurplishBlue rounded-md py-[.5em] px-[1.5em] max-w-[10rem] ml-auto`}
     >
-      Next Step
+      {step < 3 ? "Next Step" : "Comfirm"}
     </button>
   );
 
