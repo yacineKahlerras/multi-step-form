@@ -9,7 +9,7 @@ function App() {
 
   return (
     <main className="min-h-screen grid font-ubuntu bg-Magnolia text-sm">
-      <div className=" flex flex-col">
+      <div className="flex flex-col md:flex-row">
         <StepContext.Provider value={{ step: step, setStep: setStep }}>
           <Nav />
           <MainContent />

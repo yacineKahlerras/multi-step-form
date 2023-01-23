@@ -21,7 +21,7 @@ function Nav() {
         >
           {index + 1}
         </span>
-        <div className="flex-col gap-1 hidden lg:flex">
+        <div className="flex-col gap-1 hidden md:flex">
           <span>STEP {index + 1}</span>
           <span>{stepTitle}</span>
         </div>
@@ -31,7 +31,7 @@ function Nav() {
 
   return (
     <nav className="py-[1.5rem] pb-[6rem] relative text-White font-medium isolate">
-      <ul className="flex justify-center">{navLinksElements}</ul>
+      <ul className="flex justify-center md:flex-col">{navLinksElements}</ul>
       <picture>
         <source media="(min-width:900px)" srcSet={navBgDesktop} />
         <img

@@ -26,14 +26,15 @@ function FooterNav(props) {
     <button
       type="button"
       onClick={checkInfo}
-      className={`text-White bg-MarineBlue hover:bg-PurplishBlue rounded-md py-[.5em] px-[1.5em] max-w-[10rem] ml-auto`}
+      className={`text-White bg-MarineBlue hover:bg-PurplishBlue rounded-md py-[.5em] px-[1.5em] 
+      max-w-[10rem] ml-auto`}
     >
       {step < 3 ? "Next Step" : "Comfirm"}
     </button>
   );
 
   return (
-    <div className="w-full py-3 px-6 absolute bottom-0 left-0 bg-White drop-shadow-2xl">
+    <div className="w-full py-3 px-6 absolute bottom-0 left-0 bg-White drop-shadow-2xl md:hidden">
       <div className="max-w-xs mx-auto flex">
         {BackBtn}
         {NextBtn}
