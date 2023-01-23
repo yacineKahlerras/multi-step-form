@@ -12,10 +12,13 @@ function FinishingUpElements(props) {
   }
 
   return billInfo.map((bill, index) => {
+    const secondElementSeparator =
+      index == 1 ? "border-t border-LightGray pt-3" : "";
+
     return (
       <div
         key={index}
-        className="flex justify-between items-center text-CoolGray first:border-b first:border-LightGray first:pb-3"
+        className={`flex justify-between items-center text-CoolGray ${secondElementSeparator}`}
       >
         <div className="flex flex-col items-start">
           {/* title */}
