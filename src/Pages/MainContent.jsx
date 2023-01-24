@@ -65,6 +65,7 @@ function MainContent() {
           centeredSlides={true}
           spaceBetween={100}
           slidesPerView={1}
+          speed={800}
         >
           {Elements()}
         </Swiper>
