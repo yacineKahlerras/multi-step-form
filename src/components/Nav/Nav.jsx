@@ -15,18 +15,18 @@ function Nav() {
         : "";
 
     return (
-      <li key={index} className="flex gap-2 items-center">
+      <li key={index} className="flex gap-2 items-end">
         <span
-          className={`w-10 md:w-6 aspect-square m-2 border-2 grid content-center 
-          text-center rounded-full ${activeHeaderStyle} md:text-[10px] md:border`}
+          className={`w-10 md:w-7 aspect-square border-2 grid content-center 
+          text-center rounded-full ${activeHeaderStyle} md:text-xs md:border`}
         >
           {index + 1}
         </span>
         <div className="flex-col hidden md:flex">
-          <span className="text-LightGray text-[10px]">STEP {index + 1}</span>
-          <span className="leading-[.5rem] text-xs font-normal">
-            {stepTitle}
+          <span className="text-LightGray text-[10px] leading-none font-normal">
+            STEP {index + 1}
           </span>
+          <span className="text-sm font-normal uppercase">{stepTitle}</span>
         </div>
       </li>
     );
@@ -37,7 +37,7 @@ function Nav() {
       className="py-[1.5rem] pb-[6rem] relative text-White font-medium isolate 
     capitalize md:px-4 md:min-w-[200px]"
     >
-      <ul className="flex justify-center md:flex-col md:gap-1">
+      <ul className="flex justify-center gap-4 md:gap-5 md:flex-col ">
         {navLinksElements}
       </ul>
       <picture>

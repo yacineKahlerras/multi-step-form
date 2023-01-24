@@ -11,7 +11,7 @@ function App() {
     <main className="min-h-screen grid font-ubuntu bg-Magnolia text-sm md:place-items-center">
       <div
         className="flex flex-col md:flex-row md:bg-White md:drop-shadow-lg
-      md:p-3 md:rounded-lg md:min-h-[450px] md:min-w-[600px]"
+      md:p-3 md:rounded-lg md:min-h-[450px] md:min-w-[700px]"
       >
         <StepContext.Provider value={{ step: step, setStep: setStep }}>
           <Nav />
