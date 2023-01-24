@@ -11,7 +11,7 @@ function ThankYou() {
   }
 
   return (
-    <div>
+    <div className="sub-card">
       <div className="card-component flex flex-col items-center text-center py-[4rem]">
         <img className="max-w-[3rem] mb-4" src={thankYouIcon} alt="thank you" />
         <h1 className="card-header">Thank you!</h1>

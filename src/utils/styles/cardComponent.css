@@ -6,6 +6,10 @@
     m-auto text-MarineBlue relative top-[-5rem] md:top-auto;
   }
 
+  .sub-card {
+    @apply md:w-full md:max-w-md;
+  }
+
   .card-header {
     @apply text-xl font-bold mb-2;
   }

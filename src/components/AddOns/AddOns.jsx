@@ -15,7 +15,7 @@ function AddOns() {
   }
 
   return (
-    <div>
+    <div className="sub-card">
       <div className="card-component">
         <h1 className="card-header">Pick add-ons</h1>
         <p className="text-CoolGray mb-3">

@@ -34,7 +34,7 @@ function FinishingUp() {
   }
 
   return (
-    <div>
+    <div className="sub-card">
       <div className="card-component">
         <h1 className="card-header">Finishing Up</h1>
         <p className="text-CoolGray mb-3">
