@@ -18,7 +18,7 @@ function Nav() {
       <li key={index} className="flex gap-2 items-end">
         <span
           className={`w-10 md:w-7 aspect-square border-2 grid content-center 
-          text-center rounded-full ${activeHeaderStyle} md:text-xs md:border`}
+          text-center rounded-full ${activeHeaderStyle} md:text-xs md:border transition-all`}
         >
           {index + 1}
         </span>
