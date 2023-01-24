@@ -4,6 +4,7 @@ import validateForm from "./components/validateForm";
 import FormInputs from "./components/FormInputs";
 import StepContext from "@/utils/contexts/stepContext";
 import UserData from "@/utils/contexts/UserData";
+import SectionNav from "../FooterNav/SectionNav";
 
 function PersonnalInfo() {
   const { setStep } = useContext(StepContext);
@@ -68,6 +69,7 @@ function PersonnalInfo() {
         <form className="flex flex-col gap-3">
           <FormInputs fieldsInfo={fieldsInfo} />
         </form>
+        <SectionNav checkInfo={checkInfo} />
       </div>
 
       <FooterNav checkInfo={checkInfo} />

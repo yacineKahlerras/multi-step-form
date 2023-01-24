@@ -4,7 +4,7 @@ import PersonnalInfo from "@/components/PersonnalInfo/PersonnalInfo.jsx";
 import Plan from "@/components/Plan/Plan";
 import UserData from "@/utils/contexts/UserData";
 import AddOns from "@/components/AddOns/AddOns";
-import { defaultPersonnalInfo, plansInfo, addOnInfo } from "@/utils/data/data";
+import { defaultPersonnalInfo } from "@/utils/data/data";
 import FinishingUp from "@/components/FinishingUp/FinishingUp";
 import ThankYou from "@/components/ThankYou/ThankYou";
 
@@ -35,7 +35,7 @@ function MainContent() {
   ];
 
   return (
-    <div className="md:grid md:justify-center">
+    <div className="md:grid md:grow md:justify-center">
       <UserData.Provider value={data}>{stepPages[step]}</UserData.Provider>
     </div>
   );

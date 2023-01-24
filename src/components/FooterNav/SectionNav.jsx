@@ -1,7 +1,7 @@
 import StepContext from "@/utils/contexts/stepContext";
 import React, { useContext } from "react";
 
-function FooterNav(props) {
+function SectionNav(props) {
   const { step, setStep } = useContext(StepContext);
   const { checkInfo } = props;
 
@@ -34,10 +34,7 @@ function FooterNav(props) {
   );
 
   return (
-    <div
-      className="w-full py-3 px-6 absolute bottom-0 left-0 bg-White 
-    drop-shadow-2xl md:hidden"
-    >
+    <div className="hidden md:block w-full py-3 px-6 absolute bottom-0">
       <div className="max-w-xs mx-auto flex">
         {BackBtn}
         {NextBtn}
@@ -46,4 +43,4 @@ function FooterNav(props) {
   );
 }
 
-export default FooterNav;
+export default SectionNav;
