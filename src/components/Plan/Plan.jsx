@@ -3,6 +3,7 @@ import FooterNav from "@/components/FooterNav/FooterNav.jsx";
 import BillingPeriod from "./components/BillingPeriod";
 import PlanElements from "./components/PlanElements";
 import StepContext from "@/utils/contexts/stepContext";
+import SectionNav from "../FooterNav/SectionNav";
 
 function Plan() {
   const { setStep } = useContext(StepContext);
@@ -18,11 +19,13 @@ function Plan() {
         <p className="text-CoolGray mb-3">
           You have the option of monthly or yearly billing.
         </p>
-        <div className="flex flex-col gap-4 mb-5">
+        <div className="flex flex-col md:flex-row gap-4 mb-5">
           <PlanElements />
         </div>
 
         <BillingPeriod />
+
+        <SectionNav checkInfo={nextStep} />
       </div>
 
       <FooterNav checkInfo={nextStep} />

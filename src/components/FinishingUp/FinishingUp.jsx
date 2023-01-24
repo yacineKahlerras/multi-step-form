@@ -4,6 +4,7 @@ import { addOnInfo, plansInfo } from "@/utils/data/data";
 import UserData from "@/utils/contexts/UserData";
 import FinishingUpElements from "./components/FinishingUpElements";
 import StepContext from "@/utils/contexts/stepContext";
+import SectionNav from "../FooterNav/SectionNav";
 
 function FinishingUp() {
   const { setStep } = useContext(StepContext);
@@ -52,6 +53,8 @@ function FinishingUp() {
             ${fullPrice * yearlyCoefficent}/{isYearly ? "yr" : "mo"}
           </span>
         </div>
+
+        <SectionNav checkInfo={nextStep} />
       </div>
 
       <FooterNav checkInfo={nextStep} />

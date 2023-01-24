@@ -4,6 +4,7 @@ import AddOnElements from "./components/AddOnElements";
 import StepContext from "@/utils/contexts/stepContext";
 import { addOnInfo } from "@/utils/data/data";
 import UserData from "@/utils/contexts/UserData";
+import SectionNav from "../FooterNav/SectionNav";
 
 function AddOns() {
   const { setStep } = useContext(StepContext);
@@ -23,6 +24,7 @@ function AddOns() {
         <div className="flex flex-col gap-4 mb-5">
           <AddOnElements addOnInfo={addOnInfo} />
         </div>
+        <SectionNav checkInfo={nextStep} />
       </div>
 
       <FooterNav checkInfo={nextStep} />

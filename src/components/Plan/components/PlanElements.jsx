@@ -16,10 +16,14 @@ function PlanElements() {
     }));
   }
 
-  const freeMonthsElement = isYearly ? (
-    <span className=" font-medium text-MarineBlue text-xs">2 months free</span>
-  ) : (
-    ""
+  const freeMonthsElement = (
+    <span
+      className={`font-medium text-MarineBlue text-xs ${
+        isYearly ? "" : "hidden md:block md:opacity-0"
+      }`}
+    >
+      2 months free
+    </span>
   );
 
   return plansInfo.map((plan, index) => {
@@ -29,13 +33,17 @@ function PlanElements() {
     return (
       <div
         key={index}
-        className={`billing-plan ${activePlanStyle}`}
+        className={`billing-plan ${activePlanStyle} md:flex-col md:min-w-[7.5rem] items-start`}
         onClick={() => selectPlan(index)}
       >
-        <img className="max-w-[2.5rem]" src={plan.icon} alt={plan.name} />
+        <img
+          className="max-w-[2.5rem] md:max-w-[2rem] md:mb-6 md:mt-3"
+          src={plan.icon}
+          alt={plan.name}
+        />
         <div className="flex flex-col">
           <h2 className="font-bold leading-none capitalize">{plan.name}</h2>
-          <span className="text-CoolGray font-medium">
+          <span className="text-CoolGray font-medium md:text-sm">
             ${plan.priceMonth * priceCoefficent}/{timeUnit}
           </span>
           {freeMonthsElement}
