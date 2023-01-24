@@ -35,7 +35,7 @@ function MainContent() {
   ];
 
   return (
-    <div className="md:w-full md:grid md:grow md:justify-center">
+    <div className="md:w-full md:flex md:justify-center">
       <UserData.Provider value={data}>{stepPages[step]}</UserData.Provider>
     </div>
   );
