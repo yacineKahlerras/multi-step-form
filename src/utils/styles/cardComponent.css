@@ -7,7 +7,7 @@
   }
 
   .sub-card {
-    @apply md:w-full md:max-w-md;
+    @apply md:w-full md:max-w-md grow;
   }
 
   .card-header {
