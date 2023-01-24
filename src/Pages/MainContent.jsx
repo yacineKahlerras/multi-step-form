@@ -52,7 +52,7 @@ function MainContent() {
 
   useEffect(() => {
     const swiper = swiperRef.current.swiper;
-    swiper.slideNext();
+    swiper.slideTo(step);
   }, [step]);
 
   return (
