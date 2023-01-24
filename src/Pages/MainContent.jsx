@@ -8,6 +8,11 @@ import { defaultPersonnalInfo } from "@/utils/data/data";
 import FinishingUp from "@/components/FinishingUp/FinishingUp";
 import ThankYou from "@/components/ThankYou/ThankYou";
 
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import "swiper/css";
+import { useEffect } from "react";
+import { useRef } from "react";
+
 function MainContent() {
   const { step } = useContext(StepContext);
   const [userInfo, setUserInfo] = useState(defaultPersonnalInfo);
@@ -16,6 +21,7 @@ function MainContent() {
     billingPer: "month",
   });
   const [addOnIndexes, setAddOnIndexes] = useState(new Set([0, 1]));
+  const swiperRef = useRef();
 
   const data = {
     userInfo: userInfo,
@@ -34,9 +40,35 @@ function MainContent() {
     <ThankYou />,
   ];
 
+  function Elements() {
+    return stepPages.map((page, index) => {
+      return (
+        <SwiperSlide key={index} className="flex justify-center">
+          {page}
+        </SwiperSlide>
+      );
+    });
+  }
+
+  useEffect(() => {
+    const swiper = swiperRef.current.swiper;
+    swiper.slideNext();
+  }, [step]);
+
   return (
-    <div className="md:w-full md:flex md:justify-center">
-      <UserData.Provider value={data}>{stepPages[step]}</UserData.Provider>
+    <div className="max-w-xl md:w-full md:max-w-xl md:flex md:justify-center overflow-hidden">
+      <UserData.Provider value={data}>
+        <Swiper
+          ref={swiperRef}
+          allowTouchMove={false}
+          initialSlide={0}
+          centeredSlides={true}
+          spaceBetween={100}
+          slidesPerView={1}
+        >
+          {Elements()}
+        </Swiper>
+      </UserData.Provider>
     </div>
   );
 }

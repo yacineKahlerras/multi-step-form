@@ -4,6 +4,7 @@ import BillingPeriod from "./components/BillingPeriod";
 import PlanElements from "./components/PlanElements";
 import StepContext from "@/utils/contexts/stepContext";
 import SectionNav from "../FooterNav/SectionNav";
+import { useSwiper } from "swiper/react";
 
 function Plan() {
   const { setStep } = useContext(StepContext);

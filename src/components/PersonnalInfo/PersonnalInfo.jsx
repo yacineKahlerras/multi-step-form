@@ -5,10 +5,11 @@ import FormInputs from "./components/FormInputs";
 import StepContext from "@/utils/contexts/stepContext";
 import UserData from "@/utils/contexts/UserData";
 import SectionNav from "../FooterNav/SectionNav";
+import { useSwiper } from "swiper/react";
 
 function PersonnalInfo() {
   const { setStep } = useContext(StepContext);
-  const { userInfo, setUserInfo } = useContext(UserData);
+  const { userInfo, setUserInfo, NextSlide } = useContext(UserData);
 
   const [name, setName] = useState({ value: userInfo.name, error: "" });
   const [email, setEmail] = useState({
