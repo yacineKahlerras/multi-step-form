@@ -18,7 +18,7 @@ function BillingPeriod(props) {
   }
 
   return (
-    <div className="bg-Magnolia flex justify-center items-center gap-3 py-4 rounded-lg">
+    <div className="bg-Magnolia flex justify-center items-center gap-3 py-4 rounded-lg text-sm">
       <span className={`capitalize font-bold ${activeMonthStyle} duration-700`}>
         monthly
       </span>

@@ -11,7 +11,7 @@
   }
 
   .card-header {
-    @apply text-xl font-bold mb-2;
+    @apply text-3xl font-bold mb-2;
   }
 
   .billing-plan {
