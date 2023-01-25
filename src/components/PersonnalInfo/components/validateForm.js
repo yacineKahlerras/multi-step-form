@@ -48,7 +48,7 @@ const validateEmail = (email) => {
 const validatePhone = (phone) => {
   return String(phone)
     .toLowerCase()
-    .match(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im);
+    .match(/\+\s*[0-9]{7,9}/g);
 };
 
 export default validateForm;

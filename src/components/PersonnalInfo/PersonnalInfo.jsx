@@ -36,13 +36,17 @@ function PersonnalInfo() {
     },
     {
       label: "Phone Number",
-      onChange: (e) =>
-        setPhone((oldValue) => ({ ...oldValue, value: e.target.value })),
+      onChange: (e) => numberHandleChange(e),
       error: phone.error,
       placeholder: "e.g. +1 234 567 890",
       value: phone.value,
     },
   ];
+
+  function numberHandleChange(e) {
+    const value = e.target.value.replace(/\s/g, "");
+    setPhone((oldValue) => ({ ...oldValue, value: value }));
+  }
 
   function checkInfo() {
     const formValid = validateForm(
