@@ -58,7 +58,7 @@ function MainContent() {
   return (
     <UserData.Provider value={data}>
       <div
-        className="w-screen h-full mx-auto md:w-full md:h-auto md:max-w-xl md:flex md:justify-center 
+        className="w-screen h-full md:h-auto md:max-w-[33rem] md:flex md:justify-center 
     md:overflow-hidden"
       >
         <Swiper
@@ -69,7 +69,7 @@ function MainContent() {
           spaceBetween={100}
           slidesPerView={1}
           speed={800}
-          className="h-full"
+          className="h-full !overflow-visible md:!overflow-hidden"
         >
           {Elements()}
         </Swiper>
