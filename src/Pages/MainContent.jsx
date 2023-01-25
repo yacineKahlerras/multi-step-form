@@ -8,7 +8,7 @@ import { defaultPersonnalInfo } from "@/utils/data/data";
 import FinishingUp from "@/components/FinishingUp/FinishingUp";
 import ThankYou from "@/components/ThankYou/ThankYou";
 
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { useEffect } from "react";
 import { useRef } from "react";
