@@ -2,7 +2,8 @@
 
 @layer components {
   .card-component {
-    @apply max-w-sm md:h-full md:max-w-none md:w-full bg-White drop-shadow-lg md:drop-shadow-none rounded-lg p-5 pt-7 w-[90%] 
+    @apply max-w-sm md:h-full md:max-w-none md:w-full bg-White drop-shadow-lg md:drop-shadow-none 
+    rounded-lg p-5 pt-7 w-[90%] 
     m-auto text-MarineBlue relative top-[-5rem] md:top-auto;
   }
 

@@ -56,8 +56,11 @@ function MainContent() {
   }, [step]);
 
   return (
-    <div className="max-w-xl md:w-full md:max-w-xl md:flex md:justify-center overflow-hidden">
-      <UserData.Provider value={data}>
+    <UserData.Provider value={data}>
+      <div
+        className="w-screen h-full mx-auto md:w-full md:h-auto md:max-w-xl md:flex md:justify-center 
+    md:overflow-hidden"
+      >
         <Swiper
           ref={swiperRef}
           allowTouchMove={false}
@@ -66,11 +69,12 @@ function MainContent() {
           spaceBetween={100}
           slidesPerView={1}
           speed={800}
+          className="h-full"
         >
           {Elements()}
         </Swiper>
-      </UserData.Provider>
-    </div>
+      </div>
+    </UserData.Provider>
   );
 }
 
