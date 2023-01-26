@@ -4,6 +4,8 @@ import navBgDesktop from "@/assets/images/bg-sidebar-desktop.svg";
 import { useContext } from "react";
 import StepContext from "@/utils/contexts/stepContext";
 import DarkThemeContext from "@/utils/contexts/DarkThemeContext";
+import moonIcon from "@/assets/images/darkTheme/moon-stars.svg";
+import sunIcon from "@/assets/images/darkTheme/sun.svg";
 
 function Nav() {
   const navHeaders = ["your info", "select plan", "add-ons", "summary"];
@@ -45,6 +47,16 @@ function Nav() {
     >
       <ul className="flex justify-center gap-4 md:gap-5 md:flex-col">
         {navLinksElements}
+
+        {/* dark mode toggle */}
+        <li className="flex gap-2 items-end">
+          <span
+            className={`w-10 md:w-7 aspect-square grid content-center 
+          text-center rounded-full md:text-xs transition-all`}
+          >
+            <img src={sunIcon} className="w-7 invert" alt="theme" />
+          </span>
+        </li>
       </ul>
       <picture>
         <source media="(min-width:768px)" srcSet={navBgDesktop} />

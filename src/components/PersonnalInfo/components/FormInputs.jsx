@@ -1,7 +1,10 @@
+import DarkThemeContext from "@/utils/contexts/DarkThemeContext";
 import React from "react";
+import { useContext } from "react";
 
 function FormInputs(props) {
   const { fieldsInfo } = props;
+  const { darkTheme } = useContext(DarkThemeContext);
 
   return fieldsInfo.map((fieldInfo, index) => {
     return (
@@ -17,7 +20,8 @@ function FormInputs(props) {
           placeholder={fieldInfo.placeholder}
           defaultValue={fieldInfo.value}
           onChange={fieldInfo.onChange}
-          className=" font-normal border border-LightGray rounded-md py-2 px-3"
+          className={`font-normal border border-LightGray rounded-md py-2 px-3
+          ${darkTheme ? "text-White" : ""}`}
         />
       </div>
     );
