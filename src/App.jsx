@@ -8,7 +8,7 @@ import { useEffect } from "react";
 
 function App() {
   const [step, setStep] = useState(0);
-  const [darkTheme, setDarkTheme] = useState(true);
+  const [darkTheme, setDarkTheme] = useState(false);
 
   useEffect(() => {
     if (darkTheme == true) document.body.classList.add("dark-theme");
