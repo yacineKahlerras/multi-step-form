@@ -39,7 +39,11 @@ function AddOnElements(props) {
           <div
             className={`grid place-items-center shrink-0 w-5 h-5 border border-spacing-1 border-CoolGray rounded-[.27rem] ${activeCheckbox}`}
           >
-            <img src={checkedIcon} alt={addon.title} className={``} />
+            <img
+              src={checkedIcon}
+              alt={addon.title}
+              className={`${isChecked ? "" : "hidden"}`}
+            />
           </div>
           <div>
             <h2 className="font-bold leading-5 capitalize">{addon.title}</h2>

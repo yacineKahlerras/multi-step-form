@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import FooterNav from "@/components/FooterNav/FooterNav.jsx";
 import AddOnElements from "./components/AddOnElements";
 import StepContext from "@/utils/contexts/stepContext";
@@ -8,7 +8,6 @@ import SectionNav from "../FooterNav/SectionNav";
 
 function AddOns() {
   const { setStep } = useContext(StepContext);
-  const { addOnIndexes, setAddOnIndexes } = useContext(UserData);
 
   function nextStep() {
     setStep((oldStep) => oldStep + 1);
