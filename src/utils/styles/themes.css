@@ -10,6 +10,7 @@
   --Alabaster: hsl(231, 100%, 99%);
   --White: hsl(0, 0%, 100%);
   --NavBg: #00193300;
+  --NavText: hsl(0, 0%, 100%);
 }
 
 .dark-theme {
@@ -24,4 +25,5 @@
   --Alabaster: hsl(231, 100%, 99%);
   --White: #001933;
   --NavBg: #001021;
+  --NavText: hsl(229, 24%, 87%);
 }

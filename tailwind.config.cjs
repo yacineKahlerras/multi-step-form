@@ -15,6 +15,7 @@ module.exports = {
       Alabaster: "var(--Alabaster)",
       White: "var(--White)",
       NavBg: "var(--NavBg)",
+      NavText: "var(--NavText)",
     },
   },
   plugins: [],
