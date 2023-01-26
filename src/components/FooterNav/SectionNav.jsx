@@ -1,8 +1,10 @@
+import DarkThemeContext from "@/utils/contexts/DarkThemeContext";
 import StepContext from "@/utils/contexts/stepContext";
 import React, { useContext } from "react";
 
 function SectionNav(props) {
   const { step, setStep } = useContext(StepContext);
+  const { darkTheme } = useContext(DarkThemeContext);
   const { checkInfo } = props;
 
   function BackStep() {
@@ -26,8 +28,10 @@ function SectionNav(props) {
     <button
       type="button"
       onClick={checkInfo}
-      className={`text-White bg-MarineBlue hover:bg-PurplishBlue rounded-md 
-      py-[.5em] px-[1.5em] max-w-[10rem] ml-auto`}
+      className={`text-White bg-MarineBlue hover:bg-PurplishBlue rounded-md transition-all
+      py-[.5em] px-[1.5em] max-w-[10rem] ml-auto ${
+        darkTheme ? "bg-NavBg hover:bg-PurplishBlue text-MarineBlue" : ""
+      }`}
     >
       {step < 3 ? "Next Step" : "Comfirm"}
     </button>
