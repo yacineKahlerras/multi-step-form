@@ -7,16 +7,18 @@ import AddOns from "@/components/AddOns/AddOns";
 import { defaultPersonnalInfo } from "@/utils/data/data";
 import FinishingUp from "@/components/FinishingUp/FinishingUp";
 import ThankYou from "@/components/ThankYou/ThankYou";
-import moonIcon from "@/assets/images/darkTheme/moon-stars.svg";
+import moonIcon from "@/assets/images/darkTheme/moon-fill.svg";
 import sunIcon from "@/assets/images/darkTheme/sun.svg";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { useEffect } from "react";
 import { useRef } from "react";
+import DarkThemeContext from "@/utils/contexts/DarkThemeContext";
 
 function MainContent() {
   const { step } = useContext(StepContext);
+  const { darkTheme, setDarkTheme } = useContext(DarkThemeContext);
   const [userInfo, setUserInfo] = useState(defaultPersonnalInfo);
   const [billingPlan, setBillingPlan] = useState({
     index: 0,
@@ -77,14 +79,24 @@ function MainContent() {
         </Swiper>
 
         {/* dark mode toggle */}
-        <li className="flex gap-2 items-end absolute top-2 right-2">
+        <button
+          className="flex gap-2 items-end absolute top-[-9rem] right-1 md:top-2 md:right-2
+        z-10"
+          onClick={() => setDarkTheme((oldValue) => !oldValue)}
+        >
           <span
-            className={`w-10 md:w-7 aspect-square grid content-center 
+            className={`w-10 md:w-7 bg-MarineBlue ${
+              darkTheme ? "bg-[transparent]" : ""
+            } aspect-square grid place-items-center 
           text-center rounded-full md:text-xs transition-all`}
           >
-            <img src={sunIcon} className="w-7 invert" alt="theme" />
+            <img
+              src={darkTheme ? sunIcon : moonIcon}
+              className={`${darkTheme ? "w-full" : "w-5"} invert`}
+              alt="theme"
+            />
           </span>
-        </li>
+        </button>
       </div>
     </UserData.Provider>
   );
