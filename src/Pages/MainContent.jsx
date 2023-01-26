@@ -7,6 +7,8 @@ import AddOns from "@/components/AddOns/AddOns";
 import { defaultPersonnalInfo } from "@/utils/data/data";
 import FinishingUp from "@/components/FinishingUp/FinishingUp";
 import ThankYou from "@/components/ThankYou/ThankYou";
+import moonIcon from "@/assets/images/darkTheme/moon-stars.svg";
+import sunIcon from "@/assets/images/darkTheme/sun.svg";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -58,8 +60,8 @@ function MainContent() {
   return (
     <UserData.Provider value={data}>
       <div
-        className="w-screen h-full md:h-auto md:max-w-[33rem] md:flex md:justify-center 
-    md:overflow-hidden"
+        className="w-screen h-full md:h-auto md:max-w-[33rem] md:flex 
+        md:justify-center md:overflow-hidden relative"
       >
         <Swiper
           ref={swiperRef}
@@ -73,6 +75,16 @@ function MainContent() {
         >
           {Elements()}
         </Swiper>
+
+        {/* dark mode toggle */}
+        <li className="flex gap-2 items-end absolute top-2 right-2">
+          <span
+            className={`w-10 md:w-7 aspect-square grid content-center 
+          text-center rounded-full md:text-xs transition-all`}
+          >
+            <img src={sunIcon} className="w-7 invert" alt="theme" />
+          </span>
+        </li>
       </div>
     </UserData.Provider>
   );
