@@ -2,9 +2,11 @@ import React from "react";
 import thankYouIcon from "@/assets/images/icon-thank-you.svg";
 import { useContext } from "react";
 import StepContext from "@/utils/contexts/stepContext";
+import DarkThemeContext from "@/utils/contexts/DarkThemeContext";
 
 function ThankYou() {
   const { setStep } = useContext(StepContext);
+  const { darkTheme } = useContext(DarkThemeContext);
 
   function replay() {
     setStep(0);
@@ -26,7 +28,10 @@ function ThankYou() {
         </p>
         <button
           onClick={replay}
-          className="bg-MarineBlue hover:bg-PurplishBlue transition-all text-White p-2 px-4 rounded-md"
+          className={`bg-MarineBlue hover:bg-PurplishBlue transition-all text-White p-2 px-4 
+          rounded-md ${
+            darkTheme ? "bg-NavBg hover:bg-PurplishBlue text-MarineBlue" : ""
+          }`}
         >
           Replay
         </button>

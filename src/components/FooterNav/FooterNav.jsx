@@ -1,8 +1,10 @@
 import StepContext from "@/utils/contexts/stepContext";
+import DarkThemeContext from "@/utils/contexts/DarkThemeContext";
 import React, { useContext } from "react";
 
 function FooterNav(props) {
   const { step, setStep } = useContext(StepContext);
+  const { darkTheme } = useContext(DarkThemeContext);
   const { checkInfo } = props;
 
   function BackStep() {
@@ -27,7 +29,9 @@ function FooterNav(props) {
       type="button"
       onClick={checkInfo}
       className={`text-White bg-MarineBlue hover:bg-PurplishBlue rounded-md 
-      py-[.5em] px-[1.5em] max-w-[10rem] ml-auto`}
+      py-[.5em] px-[1.5em] max-w-[10rem] ml-auto ${
+        darkTheme ? "bg-NavBg hover:bg-PurplishBlue text-MarineBlue" : ""
+      }`}
     >
       {step < 3 ? "Next Step" : "Comfirm"}
     </button>
