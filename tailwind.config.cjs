@@ -14,6 +14,7 @@ module.exports = {
       Magnolia: "var(--Magnolia)",
       Alabaster: "var(--Alabaster)",
       White: "var(--White)",
+      NavBg: "var(--NavBg)",
     },
   },
   plugins: [],
